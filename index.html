@@ -33,7 +33,7 @@ const iso=d=>d.toISOString().slice(0,10),addD=n=>{const d=new Date();d.setDate(d
 const TY={ECG:['ECG',/ecg|คลื่นหัวใจ|หัวใจ/i,'บันทึกสัญญาณไฟฟ้าหัวใจ เหมาะกับแล็บ ECG'],PM:['Patient Monitor',/monitor|มอนิเตอร์|สัญญาณชีพ|vital/i,'แสดงสัญญาณชีพหลายค่าพร้อมกัน เช่น HR, SpO2, NIBP'],SPO2:['Pulse Oximeter',/spo2|oximeter|ออกซิเจน|ชีพจร|pulse/i,'วัดค่า SpO2 และอัตราชีพจร พกพาสะดวก'],BP:['Blood Pressure Monitor',/\bbp\b|ความดัน|blood pressure/i,'วัดความดันโลหิตแบบ NIBP'],INF:['Infusion Pump',/infusion|pump|ปั๊ม|สารน้ำ/i,'ฝึกควบคุมอัตราการไหลของสารน้ำ']};
 const LB={Available:'พร้อมใช้งาน',Reserved:'ถูกจอง',Borrowed:'กำลังถูกยืม',Maintenance:'ตรวจสอบ/ซ่อมบำรุง',Retired:'เลิกใช้งาน',Pending:'รออนุมัติ',Approved:'อนุมัติแล้ว',Rejected:'ปฏิเสธ',ReturnRequested:'ขอคืนแล้ว',Returned:'คืนแล้ว'};
 // ===== ตั้งค่า Supabase: แก้ 2 ค่านี้ (Project Settings > API) =====
-const SUPABASE_URL='https://xxxx.supabase.co',SUPABASE_KEY='ใส่ anon public key ที่นี่';
+const SUPABASE_URL='https://telivplmazlmbwqagsqp.supabase.co',SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRlbGl2cGxtYXpsbWJ3cWFnc3FwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE2MDEwODUsImV4cCI6MjEwNzE3NzA4NX0.LfkEfb2RSFInIx1U-EibW0_0ajNYoRfwWkxgL3mVFck';
 const sb=supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 let S={role:null,page:'login',deep:null,uid:null,eq:[],rq:[],mt:[],iss:[]};const save=()=>{};
 const log=(id,t)=>sb.from('equipment_log').insert({equipment_id:id,note:t});
